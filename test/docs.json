@@ -1,0 +1,107 @@
+{
+	"classes": [
+		{
+			"abstract": false,
+			"default": false,
+			"ambient": false,
+			"name": "MicroDocgen",
+			"constructors": [
+				{
+					"parameters": [],
+					"returns": "Docgen",
+					"scope": "public"
+				}
+			],
+			"properties": [
+				{
+					"static": false,
+					"abstract": false,
+					"ambient": false,
+					"readonly": false,
+					"name": "project",
+					"type": "Project",
+					"scope": "public",
+					"jsdoc": []
+				}
+			],
+			"methods": [
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "addFile",
+					"returns": "void",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "path",
+							"type": "string",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": []
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "addFiles",
+					"returns": "void",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "path",
+							"type": "string | readonly string[]",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": []
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "getFiles",
+					"returns": "SourceFile[]",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "pattern",
+							"type": "readonly string[]",
+							"optional": true,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": []
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "generate",
+					"returns": "Documentation",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "pattern",
+							"type": "readonly string[]",
+							"optional": true,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": []
+				}
+			]
+		}
+	]
+}

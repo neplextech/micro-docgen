@@ -1,0 +1,38 @@
+{
+  "name": "micro-docgen",
+  "version": "0.1.0",
+  "description": "Simple documentation generator for TypeScript project",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "cd test && node index.js",
+    "build": "rimraf dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archaeopteryx1/micro-docgen.git"
+  },
+  "keywords": [
+    "docs",
+    "docgen",
+    "typescript",
+    "ts",
+    "documentation",
+    "generator",
+    "api"
+  ],
+  "author": "Archaeopteryx1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/archaeopteryx1/micro-docgen/issues"
+  },
+  "homepage": "https://github.com/archaeopteryx1/micro-docgen#readme",
+  "dependencies": {
+    "ts-morph": "^16.0.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.23",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2"
+  }
+}

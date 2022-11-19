@@ -1,8 +1,11 @@
 import { Project, SourceFile } from "ts-morph";
 import { ClassParser, DocumentedClass } from "./parser/ClassParser";
+import { FunctionParser, DocumentedFunction } from "./parser/FunctionParser";
 
 export interface Documentation {
     classes: Array<DocumentedClass>;
+    functions: Array<DocumentedFunction>;
+    file: string;
 }
 
 class MicroDocgen {
@@ -22,12 +25,17 @@ class MicroDocgen {
         return this.project.getSourceFiles();
     }
 
-    public generate(pattern?: readonly string[]): Documentation {
-        const meta = {} as Documentation;
+    public generate(pattern?: readonly string[]): Documentation[] {
+        const meta: Documentation[] = [];
 
         for (const file of this.getFiles(pattern)) {
-            const classParser = new ClassParser(file.getClasses());
-            meta.classes = classParser.serialize();
+            const doc: Documentation = {
+                file: file.getFilePath(),
+                classes: new ClassParser(file.getClasses()).serialize(),
+                functions: new FunctionParser(file.getFunctions()).serialize()
+            };
+
+            meta.push(doc);
         }
 
         return meta;

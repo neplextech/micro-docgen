@@ -1,5 +1,15 @@
-import { ClassDeclaration, ConstructorDeclaration, MethodDeclaration, PropertyDeclaration, ts } from "ts-morph";
-import { formatType } from "../utils/formatType";
+import {
+    ClassDeclaration,
+    ConstructorDeclaration,
+    MethodDeclaration,
+    PropertyDeclaration,
+    ts
+} from 'ts-morph';
+import { formatType } from '../utils/formatType';
+
+export interface DocumentMeta {
+    line: number;
+}
 
 export interface DocumentedClass {
     abstract: boolean;
@@ -9,12 +19,14 @@ export interface DocumentedClass {
     constructors: Array<ClassConstructor>;
     properties: Array<ClassProperty>;
     methods: Array<ClassMethod>;
+    meta: DocumentMeta;
 }
 
 export interface ClassConstructor {
     scope: string;
     parameters: Array<ClassConstructorParameter>;
     returns: string;
+    meta: DocumentMeta;
 }
 
 export interface ClassConstructorParameter {
@@ -33,6 +45,7 @@ export interface ClassProperty {
     jsdoc: {
         description: string;
     }[];
+    meta: DocumentMeta;
 }
 
 export interface ClassMethod {
@@ -50,13 +63,16 @@ export interface ClassMethod {
         readonly: boolean;
         restParameter: boolean;
     }[];
-    jsdoc: {
-        description: string;
-    }[];
+    jsdoc: JSDocDeclaration[];
+    meta: DocumentMeta;
+}
+
+export interface JSDocDeclaration {
+    description: string;
 }
 
 export class ClassParser {
-    public constructor(public src: ClassDeclaration[]) { }
+    public constructor(public src: ClassDeclaration[]) {}
 
     public serialize(): Array<DocumentedClass> {
         const serialized: Array<DocumentedClass> = [];
@@ -69,9 +85,14 @@ export class ClassParser {
                 default: declaration.isDefaultExport(),
                 ambient: declaration.isAmbient(),
                 name: declaration.getName() || null,
-                constructors: declaration.getConstructors().map(c => this.serializeConstructor(c)),
-                properties: declaration.getProperties().map(p => this.serializeProperty(p)),
-                methods: declaration.getMethods().map(m => this.serializeMethod(m)),
+                constructors: declaration
+                    .getConstructors()
+                    .map((c) => this.serializeConstructor(c)),
+                properties: declaration.getProperties().map((p) => this.serializeProperty(p)),
+                methods: declaration.getMethods().map((m) => this.serializeMethod(m)),
+                meta: {
+                    line: declaration.getStartLineNumber(false)
+                }
             };
 
             serialized.push(doc);
@@ -89,9 +110,12 @@ export class ClassParser {
             name: p.getName(),
             type: formatType(p.getType().getText()),
             scope: p.getScope() as string,
-            jsdoc: p.getJsDocs().map(m => ({
-                description: m.getDescription(),
-            }))
+            jsdoc: p.getJsDocs().map((m) => ({
+                description: m.getDescription()
+            })),
+            meta: {
+                line: p.getStartLineNumber(false)
+            }
         };
     }
 
@@ -104,21 +128,24 @@ export class ClassParser {
             name: m.getName(),
             returns: formatType(m.getReturnType().getText()),
             scope: m.getScope() as string,
-            parameters: m.getParameters().map(p => ({
+            parameters: m.getParameters().map((p) => ({
                 name: p.getName(),
                 type: formatType(p.getType().getText()),
                 optional: p.isOptional(),
                 readonly: p.isReadonly(),
                 restParameter: p.isRestParameter()
             })),
-            jsdoc: m.getJsDocs().map(m => ({
-                description: m.getDescription(),
-            }))
+            jsdoc: m.getJsDocs().map((m) => ({
+                description: m.getDescription()
+            })),
+            meta: {
+                line: m.getStartLineNumber(false)
+            }
         };
     }
 
     public serializeConstructor(c: ConstructorDeclaration): ClassConstructor {
-        const parameters = c.getParameters().map(m => ({
+        const parameters = c.getParameters().map((m) => ({
             name: m.getName(),
             type: formatType(m.getType().getText()),
             optional: m.isOptional(),
@@ -127,6 +154,13 @@ export class ClassParser {
         }));
         const returns = formatType(c.getReturnType().getText());
 
-        return { parameters, returns, scope: c.getScope() };
+        return {
+            parameters,
+            returns,
+            scope: c.getScope(),
+            meta: {
+                line: c.getStartLineNumber(false)
+            }
+        };
     }
 }

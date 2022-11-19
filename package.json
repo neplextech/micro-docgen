@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "test": "cd test && node index.js",
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc",
+    "format": "prettier --write ./src/**/*.ts"
   },
   "repository": {
     "type": "git",

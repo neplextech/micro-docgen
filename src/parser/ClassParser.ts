@@ -2,13 +2,13 @@ import {
     ClassDeclaration,
     ConstructorDeclaration,
     MethodDeclaration,
-    PropertyDeclaration,
-    ts
+    PropertyDeclaration
 } from 'ts-morph';
 import { formatType } from '../utils/formatType';
 
 export interface DocumentMeta {
     line: number;
+    file: string;
 }
 
 export interface DocumentedClass {
@@ -72,7 +72,7 @@ export interface JSDocDeclaration {
 }
 
 export class ClassParser {
-    public constructor(public src: ClassDeclaration[]) {}
+    public constructor(public src: ClassDeclaration[], public filePath: string) {}
 
     public serialize(): Array<DocumentedClass> {
         const serialized: Array<DocumentedClass> = [];
@@ -91,7 +91,8 @@ export class ClassParser {
                 properties: declaration.getProperties().map((p) => this.serializeProperty(p)),
                 methods: declaration.getMethods().map((m) => this.serializeMethod(m)),
                 meta: {
-                    line: declaration.getStartLineNumber(false)
+                    line: declaration.getStartLineNumber(false),
+                    file: this.filePath
                 }
             };
 
@@ -114,7 +115,8 @@ export class ClassParser {
                 description: m.getDescription()
             })),
             meta: {
-                line: p.getStartLineNumber(false)
+                line: p.getStartLineNumber(false),
+                file: this.filePath
             }
         };
     }
@@ -139,7 +141,8 @@ export class ClassParser {
                 description: m.getDescription()
             })),
             meta: {
-                line: m.getStartLineNumber(false)
+                line: m.getStartLineNumber(false),
+                file: this.filePath
             }
         };
     }
@@ -159,7 +162,8 @@ export class ClassParser {
             returns,
             scope: c.getScope(),
             meta: {
-                line: c.getStartLineNumber(false)
+                line: c.getStartLineNumber(false),
+                file: this.filePath
             }
         };
     }

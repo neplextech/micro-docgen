@@ -19,7 +19,7 @@ export interface DocumentedParameter {
 }
 
 export class FunctionParser {
-    public constructor(public src: FunctionDeclaration[]) {}
+    public constructor(public src: FunctionDeclaration[], public filePath: string) {}
 
     public serialize() {
         const funcs: DocumentedFunction[] = [];
@@ -35,7 +35,8 @@ export class FunctionParser {
                     description: m.getDescription()
                 })),
                 meta: {
-                    line: declaration.getStartLineNumber(false)
+                    line: declaration.getStartLineNumber(false),
+                    file: this.filePath
                 }
             };
 

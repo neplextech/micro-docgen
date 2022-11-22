@@ -2,7 +2,7 @@
 
 Simple documentation generator for TypeScript projects.
 
-> ⚠️ **WIP!! Currently only supports class serialization**
+> ⚠️ **WIP!! Currently only supports class & function serialization**
 
 # Example
 

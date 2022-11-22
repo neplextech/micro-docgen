@@ -1,344 +1,447 @@
-[
-	{
-		"file": "/workspaces/micro-docgen/src/index.ts",
-		"classes": [
-			{
-				"abstract": false,
-				"default": false,
-				"ambient": false,
-				"name": "MicroDocgen",
-				"constructors": [
-					{
-						"parameters": [],
-						"returns": "Docgen",
-						"scope": "public",
-						"meta": {
-							"line": 13
-						}
+{
+	"custom": [],
+	"classes": [
+		{
+			"abstract": false,
+			"default": false,
+			"ambient": false,
+			"name": "MicroDocgen",
+			"constructors": [
+				{
+					"parameters": [],
+					"returns": "Docgen",
+					"scope": "public",
+					"meta": {
+						"line": 32,
+						"file": "../src/MicroDocgen.ts"
 					}
-				],
-				"properties": [
-					{
-						"static": false,
-						"abstract": false,
-						"ambient": false,
-						"readonly": false,
-						"name": "project",
-						"type": "Project",
-						"scope": "public",
-						"jsdoc": [],
-						"meta": {
-							"line": 12
-						}
-					}
-				],
-				"methods": [
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "addFile",
-						"returns": "void",
-						"scope": "public",
-						"parameters": [
-							{
-								"name": "path",
-								"type": "string",
-								"optional": false,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"jsdoc": [],
-						"meta": {
-							"line": 15
-						}
-					},
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "addFiles",
-						"returns": "void",
-						"scope": "public",
-						"parameters": [
-							{
-								"name": "path",
-								"type": "string | readonly string[]",
-								"optional": false,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"jsdoc": [],
-						"meta": {
-							"line": 19
-						}
-					},
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "getFiles",
-						"returns": "SourceFile[]",
-						"scope": "public",
-						"parameters": [
-							{
-								"name": "pattern",
-								"type": "readonly string[]",
-								"optional": true,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"jsdoc": [],
-						"meta": {
-							"line": 23
-						}
-					},
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "generate",
-						"returns": "Documentation[]",
-						"scope": "public",
-						"parameters": [
-							{
-								"name": "pattern",
-								"type": "readonly string[]",
-								"optional": true,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"jsdoc": [],
-						"meta": {
-							"line": 28
-						}
-					}
-				],
-				"meta": {
-					"line": 11
 				}
-			}
-		],
-		"functions": []
-	},
-	{
-		"file": "/workspaces/micro-docgen/src/parser/ClassParser.ts",
-		"classes": [
-			{
-				"abstract": false,
-				"default": false,
-				"ambient": false,
-				"name": "ClassParser",
-				"constructors": [
-					{
-						"parameters": [
-							{
-								"name": "src",
-								"type": "ClassDeclaration[]",
-								"optional": false,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"returns": "ClassParser",
-						"scope": "public",
-						"meta": {
-							"line": 69
-						}
+			],
+			"properties": [
+				{
+					"static": false,
+					"abstract": false,
+					"ambient": false,
+					"readonly": false,
+					"name": "customFileStore",
+					"type": "CustomDocument[]",
+					"scope": "private",
+					"jsdoc": [],
+					"meta": {
+						"line": 30,
+						"file": "../src/MicroDocgen.ts"
 					}
-				],
-				"properties": [],
-				"methods": [
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "serialize",
-						"returns": "DocumentedClass[]",
-						"scope": "public",
-						"parameters": [],
-						"jsdoc": [],
-						"meta": {
-							"line": 71
-						}
-					},
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "serializeProperty",
-						"returns": "ClassProperty",
-						"scope": "public",
-						"parameters": [
-							{
-								"name": "p",
-								"type": "PropertyDeclaration",
-								"optional": false,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"jsdoc": [],
-						"meta": {
-							"line": 96
-						}
-					},
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "serializeMethod",
-						"returns": "ClassMethod",
-						"scope": "public",
-						"parameters": [
-							{
-								"name": "m",
-								"type": "MethodDeclaration",
-								"optional": false,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"jsdoc": [],
-						"meta": {
-							"line": 114
-						}
-					},
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "serializeConstructor",
-						"returns": "ClassConstructor",
-						"scope": "public",
-						"parameters": [
-							{
-								"name": "c",
-								"type": "ConstructorDeclaration",
-								"optional": false,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"jsdoc": [],
-						"meta": {
-							"line": 139
-						}
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"ambient": false,
+					"readonly": false,
+					"name": "project",
+					"type": "Project",
+					"scope": "public",
+					"jsdoc": [],
+					"meta": {
+						"line": 31,
+						"file": "../src/MicroDocgen.ts"
 					}
-				],
-				"meta": {
-					"line": 68
 				}
-			}
-		],
-		"functions": []
-	},
-	{
-		"file": "/workspaces/micro-docgen/src/parser/FunctionParser.ts",
-		"classes": [
-			{
-				"abstract": false,
-				"default": false,
-				"ambient": false,
-				"name": "FunctionParser",
-				"constructors": [
-					{
-						"parameters": [
-							{
-								"name": "src",
-								"type": "FunctionDeclaration[]",
-								"optional": false,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"returns": "FunctionParser",
-						"scope": "public",
-						"meta": {
-							"line": 22
+			],
+			"methods": [
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "addFile",
+					"returns": "void",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "path",
+							"type": "string",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
 						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 34,
+						"file": "../src/MicroDocgen.ts"
 					}
-				],
-				"properties": [],
-				"methods": [
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "serialize",
-						"returns": "DocumentedFunction[]",
-						"scope": "public",
-						"parameters": [],
-						"jsdoc": [],
-						"meta": {
-							"line": 24
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "addFiles",
+					"returns": "void",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "path",
+							"type": "string | readonly string[]",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
 						}
-					},
-					{
-						"static": false,
-						"abstract": false,
-						"async": false,
-						"generator": false,
-						"name": "serializeParameters",
-						"returns": "DocumentedParameter[]",
-						"scope": "public",
-						"parameters": [
-							{
-								"name": "params",
-								"type": "ParameterDeclaration[]",
-								"optional": false,
-								"readonly": false,
-								"restParameter": false
-							}
-						],
-						"jsdoc": [],
-						"meta": {
-							"line": 48
-						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 38,
+						"file": "../src/MicroDocgen.ts"
 					}
-				],
-				"meta": {
-					"line": 21
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "getFiles",
+					"returns": "SourceFile[]",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "pattern",
+							"type": "readonly string[]",
+							"optional": true,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 42,
+						"file": "../src/MicroDocgen.ts"
+					}
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "addCustomSync",
+					"returns": "void",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "file",
+							"type": "CustomDocumentRegisterInfo",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 47,
+						"file": "../src/MicroDocgen.ts"
+					}
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": true,
+					"generator": false,
+					"name": "addCustom",
+					"returns": "Promise<void>",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "file",
+							"type": "CustomDocumentRegisterInfo",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 63,
+						"file": "../src/MicroDocgen.ts"
+					}
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "generate",
+					"returns": "Documentation",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "pattern",
+							"type": "readonly string[]",
+							"optional": true,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 79,
+						"file": "../src/MicroDocgen.ts"
+					}
 				}
+			],
+			"meta": {
+				"line": 29,
+				"file": "../src/MicroDocgen.ts"
 			}
-		],
-		"functions": []
-	},
-	{
-		"file": "/workspaces/micro-docgen/src/utils/formatType.ts",
-		"classes": [],
-		"functions": [
-			{
-				"default": false,
-				"name": "formatType",
-				"parameters": [
-					{
-						"name": "type",
-						"type": "string",
-						"optional": false,
-						"readonly": false,
-						"rest": false
+		},
+		{
+			"abstract": false,
+			"default": false,
+			"ambient": false,
+			"name": "ClassParser",
+			"constructors": [
+				{
+					"parameters": [
+						{
+							"name": "src",
+							"type": "ClassDeclaration[]",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						},
+						{
+							"name": "filePath",
+							"type": "string",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"returns": "ClassParser",
+					"scope": "public",
+					"meta": {
+						"line": 75,
+						"file": "../src/parser/ClassParser.ts"
 					}
-				],
-				"returns": "string",
-				"jsdoc": [],
-				"meta": {
-					"line": 3
 				}
+			],
+			"properties": [],
+			"methods": [
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "serialize",
+					"returns": "DocumentedClass[]",
+					"scope": "public",
+					"parameters": [],
+					"jsdoc": [],
+					"meta": {
+						"line": 77,
+						"file": "../src/parser/ClassParser.ts"
+					}
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "serializeProperty",
+					"returns": "ClassProperty",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "p",
+							"type": "PropertyDeclaration",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 105,
+						"file": "../src/parser/ClassParser.ts"
+					}
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "serializeMethod",
+					"returns": "ClassMethod",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "m",
+							"type": "MethodDeclaration",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 124,
+						"file": "../src/parser/ClassParser.ts"
+					}
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "serializeConstructor",
+					"returns": "ClassConstructor",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "c",
+							"type": "ConstructorDeclaration",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 150,
+						"file": "../src/parser/ClassParser.ts"
+					}
+				}
+			],
+			"meta": {
+				"line": 74,
+				"file": "../src/parser/ClassParser.ts"
 			}
-		]
+		},
+		{
+			"abstract": false,
+			"default": false,
+			"ambient": false,
+			"name": "FunctionParser",
+			"constructors": [
+				{
+					"parameters": [
+						{
+							"name": "src",
+							"type": "FunctionDeclaration[]",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						},
+						{
+							"name": "filePath",
+							"type": "string",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"returns": "FunctionParser",
+					"scope": "public",
+					"meta": {
+						"line": 22,
+						"file": "../src/parser/FunctionParser.ts"
+					}
+				}
+			],
+			"properties": [],
+			"methods": [
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "serialize",
+					"returns": "DocumentedFunction[]",
+					"scope": "public",
+					"parameters": [],
+					"jsdoc": [],
+					"meta": {
+						"line": 24,
+						"file": "../src/parser/FunctionParser.ts"
+					}
+				},
+				{
+					"static": false,
+					"abstract": false,
+					"async": false,
+					"generator": false,
+					"name": "serializeParameters",
+					"returns": "DocumentedParameter[]",
+					"scope": "public",
+					"parameters": [
+						{
+							"name": "params",
+							"type": "ParameterDeclaration[]",
+							"optional": false,
+							"readonly": false,
+							"restParameter": false
+						}
+					],
+					"jsdoc": [],
+					"meta": {
+						"line": 49,
+						"file": "../src/parser/FunctionParser.ts"
+					}
+				}
+			],
+			"meta": {
+				"line": 21,
+				"file": "../src/parser/FunctionParser.ts"
+			}
+		}
+	],
+	"functions": [
+		{
+			"default": false,
+			"name": "formatType",
+			"parameters": [
+				{
+					"name": "type",
+					"type": "string",
+					"optional": false,
+					"readonly": false,
+					"rest": false
+				}
+			],
+			"returns": "string",
+			"jsdoc": [],
+			"meta": {
+				"line": 3,
+				"file": "../src/utils/formatType.ts"
+			}
+		},
+		{
+			"default": false,
+			"name": "normalizePath",
+			"parameters": [
+				{
+					"name": "target",
+					"type": "string",
+					"optional": false,
+					"readonly": false,
+					"rest": false
+				},
+				{
+					"name": "from",
+					"type": "string",
+					"optional": true,
+					"readonly": false,
+					"rest": false
+				}
+			],
+			"returns": "string",
+			"jsdoc": [],
+			"meta": {
+				"line": 3,
+				"file": "../src/utils/pathNormalizer.ts"
+			}
+		}
+	],
+	"meta": {
+		"generatedAt": "2022-11-22T08:18:12.666Z",
+		"generatedTimestamp": 1669105092666
 	}
-]
+}

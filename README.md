@@ -1,22 +1,35 @@
-# `micro-docgen`
+# micro-docgen
 
-Simple documentation generator for TypeScript projects.
+TypeScript documentation generator on steroids 💉. MicroDocgen is built on top of typedoc to leverage its power and add more features.
 
-> ⚠️ **WIP!! Currently only supports class & function serialization**
+## TODO
 
-# Example
+-   Static site generation
+-   More options
+
+## Installation
+
+```sh
+$ npm install micro-docgen
+```
+
+## Usage
 
 ```js
-const { Docgen } = require('micro-docgen');
-const docgen = new Docgen();
-const fs = require('fs');
+import { createDocumentation } from 'micro-docgen';
 
-// add source file(s)
-docgen.addFiles('./src/*.ts');
-
-// Generate json
-const documentation = docgen.generate();
-
-// write the output to docs.json
-fs.writeFileSync('./docs.json', JSON.stringify(documentation, null, '\t'));
+await createDocumentation({
+    // source files
+    input: ['src'],
+    // output directory
+    output: 'docs',
+    // tsconfig path
+    tsconfigPath: './tsconfig.json',
+    // to generate markdown files
+    markdown: true,
+    // to generate json file
+    jsonName: 'docs.json',
+    // include custom files such as readme
+    custom: [...]
+});
 ```

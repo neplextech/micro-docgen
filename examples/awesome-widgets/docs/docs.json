@@ -1,0 +1,292 @@
+{
+    "custom": {
+        "Welcome": [
+            {
+                "category": "Welcome",
+                "name": "Welcome",
+                "path": "README.md",
+                "content": "# Awesome Widgets\n\nThis is a collection of awesome plug-and-play widgets for your website.\n\n## Example\n\n```js\nimport { ButtonWidget } from 'awesome-widgets';\n\nconst button = new ButtonWidget();\n\nconst result = button.render();\n\nconsole.log(result); // <button>Button</button>\n```\n"
+            }
+        ]
+    },
+    "modules": {
+        "micro-docgen": {
+            "classes": [
+                {
+                    "data": {
+                        "name": "ButtonWidget",
+                        "abstract": false,
+                        "constructor": {
+                            "name": "ButtonWidget",
+                            "description": "Creates a new button.",
+                            "see": [],
+                            "static": false,
+                            "private": false,
+                            "examples": [],
+                            "abstract": false,
+                            "deprecated": false,
+                            "parameters": [],
+                            "returns": {
+                                "type": "ButtonWidget",
+                                "rawType": [
+                                    "ButtonWidget"
+                                ],
+                                "description": null
+                            },
+                            "metadata": {
+                                "name": "Button.ts",
+                                "directory": "widgets",
+                                "line": 15
+                            },
+                            "constructor": "new ButtonWidget"
+                        },
+                        "metadata": {
+                            "name": "Button.ts",
+                            "directory": "widgets",
+                            "line": 6
+                        },
+                        "deprecated": false,
+                        "description": "A button widget.",
+                        "extends": "Widget<{ name: string }>",
+                        "implements": null,
+                        "rawExtends": [
+                            "Widget",
+                            "<",
+                            "{",
+                            " ",
+                            "name",
+                            ":",
+                            " ",
+                            "string",
+                            ";",
+                            " ",
+                            "}",
+                            ">"
+                        ],
+                        "rawImplements": null,
+                        "methods": [
+                            {
+                                "name": "render",
+                                "description": "Renders this button.",
+                                "see": [],
+                                "static": false,
+                                "private": false,
+                                "examples": [],
+                                "abstract": false,
+                                "deprecated": false,
+                                "parameters": [],
+                                "returns": {
+                                    "type": "string",
+                                    "rawType": [
+                                        "string"
+                                    ],
+                                    "description": null
+                                },
+                                "metadata": {
+                                    "name": "Button.ts",
+                                    "directory": "widgets",
+                                    "line": 22
+                                }
+                            }
+                        ],
+                        "private": false,
+                        "properties": [
+                            {
+                                "abstract": false,
+                                "default": null,
+                                "deprecated": false,
+                                "description": "The props for this widget.",
+                                "metadata": {
+                                    "name": "Widget.ts",
+                                    "directory": "widgets",
+                                    "line": 19
+                                },
+                                "name": "props",
+                                "private": false,
+                                "readonly": false,
+                                "see": [],
+                                "static": false,
+                                "type": "{ name: string }"
+                            },
+                            {
+                                "default": null,
+                                "description": "The name of this widget.",
+                                "metadata": {
+                                    "name": "Widget.ts",
+                                    "directory": "widgets",
+                                    "line": 24
+                                },
+                                "name": "name",
+                                "type": "string"
+                            }
+                        ],
+                        "see": []
+                    },
+                    "markdown": []
+                },
+                {
+                    "data": {
+                        "name": "Widget",
+                        "abstract": true,
+                        "constructor": {
+                            "name": "Widget",
+                            "description": "Create a new widget.",
+                            "see": [],
+                            "static": false,
+                            "private": false,
+                            "examples": [],
+                            "abstract": false,
+                            "deprecated": false,
+                            "parameters": [
+                                {
+                                    "name": "props",
+                                    "description": "The props for this widget.",
+                                    "optional": false,
+                                    "default": null,
+                                    "type": "T",
+                                    "rawType": [
+                                        "T"
+                                    ]
+                                }
+                            ],
+                            "returns": {
+                                "type": "Widget<T>",
+                                "rawType": [
+                                    "Widget",
+                                    "<",
+                                    "T",
+                                    ">"
+                                ],
+                                "description": null
+                            },
+                            "metadata": {
+                                "name": "Widget.ts",
+                                "directory": "widgets",
+                                "line": 19
+                            },
+                            "constructor": "new Widget"
+                        },
+                        "metadata": {
+                            "name": "Widget.ts",
+                            "directory": "widgets",
+                            "line": 14
+                        },
+                        "deprecated": false,
+                        "description": "A widget.",
+                        "extends": null,
+                        "implements": null,
+                        "rawExtends": null,
+                        "rawImplements": null,
+                        "methods": [
+                            {
+                                "name": "render",
+                                "description": "Render this widget.",
+                                "see": [],
+                                "static": false,
+                                "private": false,
+                                "examples": [],
+                                "abstract": true,
+                                "deprecated": false,
+                                "parameters": [],
+                                "returns": {
+                                    "type": "string",
+                                    "rawType": [
+                                        "string"
+                                    ],
+                                    "description": null
+                                },
+                                "metadata": {
+                                    "name": "Widget.ts",
+                                    "directory": "widgets",
+                                    "line": 31
+                                }
+                            }
+                        ],
+                        "private": false,
+                        "properties": [
+                            {
+                                "abstract": false,
+                                "default": null,
+                                "deprecated": false,
+                                "description": "The props for this widget.",
+                                "metadata": {
+                                    "name": "Widget.ts",
+                                    "directory": "widgets",
+                                    "line": 19
+                                },
+                                "name": "props",
+                                "private": false,
+                                "readonly": false,
+                                "see": [],
+                                "static": false,
+                                "type": "T"
+                            },
+                            {
+                                "default": null,
+                                "description": "The name of this widget.",
+                                "metadata": {
+                                    "name": "Widget.ts",
+                                    "directory": "widgets",
+                                    "line": 24
+                                },
+                                "name": "name",
+                                "type": "string"
+                            }
+                        ],
+                        "see": []
+                    },
+                    "markdown": []
+                }
+            ],
+            "functions": [],
+            "name": "micro-docgen",
+            "types": [
+                {
+                    "data": {
+                        "deprecated": false,
+                        "description": "The props for a widget.",
+                        "metadata": {
+                            "name": "Widget.ts",
+                            "directory": "widgets",
+                            "line": 4
+                        },
+                        "name": "WidgetProps",
+                        "parameters": [],
+                        "private": false,
+                        "properties": [
+                            {
+                                "name": "name",
+                                "description": "The name of this widget.",
+                                "value": null,
+                                "abstract": false,
+                                "default": null,
+                                "deprecated": false,
+                                "metadata": {
+                                    "name": "Widget.ts",
+                                    "directory": "widgets",
+                                    "line": 8
+                                },
+                                "private": false,
+                                "readonly": false,
+                                "see": [],
+                                "static": false,
+                                "type": "string",
+                                "rawType": [
+                                    "string"
+                                ]
+                            }
+                        ],
+                        "returns": null,
+                        "see": [],
+                        "type": "any"
+                    },
+                    "markdown": []
+                }
+            ]
+        }
+    },
+    "metadata": {
+        "generationMs": 3259.466300001368,
+        "timestamp": 1701602075317
+    }
+}

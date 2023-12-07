@@ -1,3 +1,0 @@
-## DocumentedFunction
-
--   Type: DocumentedClassMethod

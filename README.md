@@ -6,6 +6,7 @@ TypeScript documentation generator on steroids 💉. MicroDocgen is built on top
 
 -   Static site generation
 -   More options
+-   CLI
 
 ## Installation
 

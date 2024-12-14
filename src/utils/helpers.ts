@@ -18,7 +18,6 @@ export function getFileMetadata(decl: JSONOutput.DeclarationReflection): FileMet
         url: src.url
     };
 }
-
 export interface FileMetadata {
     name: string;
     directory: string;
@@ -56,7 +55,7 @@ export function parseType(t: JSONOutput.SomeType): string {
             }`;
         case 'reference':
             return `${t.name}${
-                t.typeArguments ? `<${t.typeArguments.map(parseType).join(', ').trim()}>` : ''
+                t.typeArguments ? `<${t.typeArguments.map(parseType).join(', ')}>` : ''
             }`;
         case 'reflection': {
             const obj = {} as Record<string, any>;
@@ -66,9 +65,9 @@ export function parseType(t: JSONOutput.SomeType): string {
                 for (const child of children) {
                     obj[child.name] = parseType(child.type as JSONOutput.SomeType);
                 }
-                return `{ ${Object.entries(obj)
+                return `{\n  ${Object.entries(obj)
                     .map(([key, value]) => `${key}: ${value}`)
-                    .join(', ')} }`;
+                    .join(',\n  ')}\n}`;
             }
 
             if (signatures && signatures.length > 0) {
@@ -79,7 +78,7 @@ export function parseType(t: JSONOutput.SomeType): string {
                             p.type ? parseType(p.type as JSONOutput.SomeType) : 'unknown'
                         }`
                 );
-                return `(${params?.join(', ') || '...args: unknown[]'}) => ${
+                return `(\n  ${params?.join(',\n  ') || '...args: unknown[]'}\n) => ${
                     s.type ? parseType(s.type as JSONOutput.SomeType) : 'unknown'
                 }`;
             }
@@ -161,18 +160,17 @@ export function parseTypes(t: JSONOutput.SomeType): string[] {
                 }
                 return [
                     '{',
-                    ' ',
+                    '\n  ',
                     ...Object.entries(obj)
                         .flatMap(([k, v], i, a) => [
                             k,
                             ':',
                             ' ',
                             ...[Array.isArray(v) ? v.flat() : v],
-                            ';'.concat(i === a.length - 1 ? '' : ' ')
+                            ';'.concat(i === a.length - 1 ? '' : '\n  ')
                         ])
                         .flat(),
-                    ' ',
-                    '}'
+                    '\n}'
                 ];
             }
 
@@ -185,12 +183,9 @@ export function parseTypes(t: JSONOutput.SomeType): string[] {
                         }`
                 );
                 return [
-                    '(',
+                    '(\n  ',
                     ...(params || ['...args', 'unknown', '[', ']']),
-                    ')',
-                    ' ',
-                    '=>',
-                    ' ',
+                    '\n) => ',
                     ...(s.type ? parseTypes(s.type as JSONOutput.SomeType) : ['unknown'])
                 ];
             }

@@ -67,15 +67,11 @@ export interface DocumentedClassMethod {
 
 export class ClassSerializer extends AbstractSerializer {
     public serialize(): DocumentedClass {
-        const ctor = this.declaration.children?.find((c) => {
-            return c.kind === ReflectionKind.Constructor;
-        });
-        const properties = this.declaration.children?.filter((c) => {
-            return c.kind === ReflectionKind.Property || c.kind === ReflectionKind.Accessor;
-        });
-        const methods = this.declaration.children?.filter((c) => {
-            return c.kind === ReflectionKind.Method;
-        });
+        const ctor = this.declaration.children?.find((c) => c.kind === ReflectionKind.Constructor);
+        const properties = this.declaration.children?.filter(
+            (c) => c.kind === ReflectionKind.Property || c.kind === ReflectionKind.Accessor
+        );
+        const methods = this.declaration.children?.filter((c) => c.kind === ReflectionKind.Method);
 
         const ctorSig = ctor?.signatures?.find(
             (r) => r.kind === ReflectionKind.ConstructorSignature

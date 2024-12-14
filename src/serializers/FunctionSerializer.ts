@@ -1,6 +1,5 @@
-import { JSONOutput, ReflectionKind } from 'typedoc';
-import { FunctionDeclaration } from 'typescript';
-import { getFileMetadata, getName, parseType, parseTypes } from '../utils';
+import { JSONOutput } from 'typedoc';
+import { getFileMetadata, parseType, parseTypes } from '../utils';
 import { AbstractSerializer } from './AbstractSerializer';
 import { DocumentedClassMethod, DocumentedParameter } from './ClassSerializer';
 

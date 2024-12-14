@@ -4,9 +4,9 @@ TypeScript documentation generator on steroids 💉. MicroDocgen is built on top
 
 ## TODO
 
--   Static site generation
--   More options
--   CLI
+- Static site generation
+- More options
+- CLI
 
 ## Installation
 
@@ -33,4 +33,30 @@ await createDocumentation({
     // include custom files such as readme
     custom: [...]
 });
+```
+
+## CLI usage
+
+You need to have `./micro-docgen.json` file in your project root.
+
+```json
+{
+    "input": ["src"],
+    "output": "docs",
+    "tsconfigPath": "./tsconfig.json",
+    "markdown": true,
+    "jsonName": "docs.json"
+}
+```
+
+Then run:
+
+```sh
+$ docgen
+```
+
+or
+
+```sh
+$ micro-docgen
 ```

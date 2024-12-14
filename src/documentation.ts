@@ -43,6 +43,7 @@ export interface MicroDocgenInit {
     clean?: boolean;
     typeLinker?: (type: string, ref: string[]) => string;
     typeLinkerBasePath?: string;
+    omitTypeLinkerExtension?: boolean;
 }
 
 /**
@@ -119,6 +120,7 @@ export async function createDocumentation(options: MicroDocgenInit): Promise<Doc
     options.clean ??= true;
     options.includeMarkdownHeaders ??= true;
     options.typeLinkerBasePath ??= '';
+    options.omitTypeLinkerExtension ??= false;
 
     const shouldLog = ![
         'None',
@@ -189,42 +191,46 @@ export async function createDocumentation(options: MicroDocgenInit): Promise<Doc
     // otherwise it will be /:module/types/:name
     const findTypeFromDoc = (type: string) => {
         const isFlat = Object.keys(doc.modules).length === 1 && options.flattenSingleModule;
+        const addExtension = (path: string) => {
+            if (options.omitTypeLinkerExtension) return path;
+            return path + '.' + options.extension;
+        };
 
         for (const [module, data] of Object.entries(doc.modules)) {
             for (const typeData of data.types) {
                 if (typeData.data.name === type) {
-                    return `${isFlat ? '' : '/' + module}/types/${type}.${options.extension}`;
+                    return addExtension(`${isFlat ? '' : '/' + module}/types/${type}`);
                 }
             }
 
             for (const typeData of data.enum) {
                 if (typeData.data.name === type) {
-                    return `${isFlat ? '' : '/' + module}/enums/${type}.${options.extension}`;
+                    return addExtension(`${isFlat ? '' : '/' + module}/enums/${type}`);
                 }
             }
 
             for (const typeData of data.variables) {
                 if (typeData.data.name === type) {
-                    return `${isFlat ? '' : '/' + module}/variables/${type}.${options.extension}`;
+                    return addExtension(`${isFlat ? '' : '/' + module}/variables/${type}`);
                 }
             }
 
             for (const typeData of data.functions) {
                 if (typeData.data.name === type) {
-                    return `${isFlat ? '' : '/' + module}/functions/${type}.${options.extension}`;
+                    return addExtension(`${isFlat ? '' : '/' + module}/functions/${type}`);
                 }
             }
 
             for (const typeData of data.classes) {
                 if (typeData.data.name === type) {
-                    return `${isFlat ? '' : '/' + module}/classes/${type}.${options.extension}`;
+                    return addExtension(`${isFlat ? '' : '/' + module}/classes/${type}`);
                 }
             }
 
             for (const [category, customData] of Object.entries(doc.custom)) {
                 for (const typeData of customData) {
                     if (typeData.name === type) {
-                        return `/${category}/${type}.${typeData.type || options.extension}`;
+                        return `/${category}/${type}${typeData.type ? `.${typeData.type}` : ''}`;
                     }
                 }
             }

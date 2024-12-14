@@ -22,6 +22,8 @@ export interface MarkdownGeneratorMdBuilderOptions {
     includeHeaders: boolean;
 }
 
+const escapeMultiLine = (src: string) => src.replace(/\n|\r/g, ' ');
+
 export class MarkdownGenerator {
     public linker: typeof this.options.linker;
 
@@ -32,8 +34,8 @@ export class MarkdownGenerator {
     public getHeaders(value: DocumentedClass | DocumentedTypes | DocumentedFunction) {
         const headers = [
             '---',
-            `title: ${escape(value.name)}`,
-            `description: ${escape(value.description || 'No description provided')}`,
+            `title: ${escapeMultiLine(escape(value.name))}`,
+            `description: ${escapeMultiLine(escape(value.description || 'No description provided'))}`,
             '---',
             ''
         ];

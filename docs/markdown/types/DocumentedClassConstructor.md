@@ -21,4 +21,4 @@ description: No description provided
 | static | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | N/A | N/A |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/515b36b40a80a8da0e52785839d6336deb90e3f3/src/serializers/ClassSerializer.ts#L22)
+- [Source](https://github.com/neplextech/micro-docgen/blob/0a3a2574da6de7199a2316a00abcd9d9f17c69a7/src/serializers/ClassSerializer.ts#L22)

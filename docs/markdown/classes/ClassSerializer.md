@@ -17,7 +17,7 @@ ClassSerializer(declaration)
 
 ## Properties
 ### public declaration: any
-- [Source](https://github.com/neplextech/micro-docgen/blob/515b36b40a80a8da0e52785839d6336deb90e3f3/src/serializers/AbstractSerializer.ts#L4)
+- [Source](https://github.com/neplextech/micro-docgen/blob/0a3a2574da6de7199a2316a00abcd9d9f17c69a7/src/serializers/AbstractSerializer.ts#L4)
 
 ## Methods
 ### public parseMethod(decl): DocumentedClassMethod
@@ -26,20 +26,20 @@ ClassSerializer(declaration)
 | decl | DeclarationReflection | ❌ |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/515b36b40a80a8da0e52785839d6336deb90e3f3/src/serializers/ClassSerializer.ts#L185)
+- [Source](https://github.com/neplextech/micro-docgen/blob/0a3a2574da6de7199a2316a00abcd9d9f17c69a7/src/serializers/ClassSerializer.ts#L185)
 ### public parseParameter(decl): DocumentedParameter
 | Parameter | Type | Optional |
 | ----------- | ----------- | ----------- |
 | decl | TypeParameterReflection | ❌ |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/515b36b40a80a8da0e52785839d6336deb90e3f3/src/serializers/ClassSerializer.ts#L226)
+- [Source](https://github.com/neplextech/micro-docgen/blob/0a3a2574da6de7199a2316a00abcd9d9f17c69a7/src/serializers/ClassSerializer.ts#L226)
 ### public parseProperties(decl): DocumentedClassProperty
 | Parameter | Type | Optional |
 | ----------- | ----------- | ----------- |
 | decl | DeclarationReflection | ❌ |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/515b36b40a80a8da0e52785839d6336deb90e3f3/src/serializers/ClassSerializer.ts#L123)
+- [Source](https://github.com/neplextech/micro-docgen/blob/0a3a2574da6de7199a2316a00abcd9d9f17c69a7/src/serializers/ClassSerializer.ts#L123)
 ### public serialize(): DocumentedClass
-- [Source](https://github.com/neplextech/micro-docgen/blob/515b36b40a80a8da0e52785839d6336deb90e3f3/src/serializers/ClassSerializer.ts#L69)
+- [Source](https://github.com/neplextech/micro-docgen/blob/0a3a2574da6de7199a2316a00abcd9d9f17c69a7/src/serializers/ClassSerializer.ts#L69)

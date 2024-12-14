@@ -1,6 +1,6 @@
 {
   "name": "micro-docgen",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Quick and easy documentation for typescript projects.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

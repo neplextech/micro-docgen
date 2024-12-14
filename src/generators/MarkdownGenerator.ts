@@ -24,6 +24,10 @@ export interface MarkdownGeneratorMdBuilderOptions {
 
 const escapeMultiLine = (src: string) => src.replace(/\n|\r/g, ' ');
 
+/**
+ * MarkdownGenerator is a class that generates markdown documentation for classes, functions, and types.
+ * It transforms the JSON output from the serializer into markdown and applies the necessary formatting or linking.
+ */
 export class MarkdownGenerator {
     public linker: typeof this.options.linker;
 

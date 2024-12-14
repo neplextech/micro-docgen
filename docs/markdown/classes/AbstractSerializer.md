@@ -17,8 +17,8 @@ AbstractSerializer(declaration)
 
 ## Properties
 ### public declaration: any
-- [Source](https://github.com/neplextech/micro-docgen/blob/fbfcd84c930585aff5882714b14f394715057a88/src/serializers/AbstractSerializer.ts#L4)
+- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/AbstractSerializer.ts#L4)
 
 ## Methods
 ### public serialize(): [void](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
-- [Source](https://github.com/neplextech/micro-docgen/blob/fbfcd84c930585aff5882714b14f394715057a88/src/serializers/AbstractSerializer.ts#L6)
+- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/AbstractSerializer.ts#L6)

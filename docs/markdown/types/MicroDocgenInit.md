@@ -22,6 +22,7 @@ Interface for initializing MicroDocgen.
 | markdown | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | N/A |
 | noEmit | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | N/A |
 | noLinkTypes | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | N/A |
+| omitTypeLinkerExtension | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | N/A |
 | output | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | N/A |
 | print | [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | N/A |
 | spaces | [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | N/A |
@@ -30,4 +31,4 @@ Interface for initializing MicroDocgen.
 | typeLinkerBasePath | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | N/A |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/fbfcd84c930585aff5882714b14f394715057a88/src/documentation.ts#L26)
+- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/documentation.ts#L26)

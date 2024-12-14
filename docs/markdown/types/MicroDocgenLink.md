@@ -7,4 +7,4 @@ description: No description provided
 
 - Type: Record\<string, string>
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/fbfcd84c930585aff5882714b14f394715057a88/src/documentation.ts#L19)
+- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/documentation.ts#L19)

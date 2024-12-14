@@ -15,4 +15,4 @@ Interface for custom files in MicroDocgen.
 | type | [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | N/A |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/fbfcd84c930585aff5882714b14f394715057a88/src/documentation.ts#L51)
+- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/documentation.ts#L52)

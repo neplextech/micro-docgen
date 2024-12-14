@@ -14,4 +14,4 @@ Interface for the generated documentation.
 | modules | Record\<string, \{   classes: Array\<\{   data: DocumentedClass,   markdown: Array\<MarkdownGeneratorMarkdownBuild> }>,   enum: Array\<\{   data: DocumentedTypes,   markdown: Array\<MarkdownGeneratorMarkdownBuild> }>,   functions: Array\<\{   data: DocumentedClassMethod,   markdown: Array\<MarkdownGeneratorMarkdownBuild> }>,   name: string,   types: Array\<\{   data: DocumentedTypes,   markdown: Array\<MarkdownGeneratorMarkdownBuild> }>,   variables: Array\<\{   data: DocumentedTypes,   markdown: Array\<MarkdownGeneratorMarkdownBuild> }> }> | N/A |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/fbfcd84c930585aff5882714b14f394715057a88/src/documentation.ts#L69)
+- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/documentation.ts#L70)

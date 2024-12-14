@@ -8,7 +8,7 @@ description: No description provided
 
 
 ```typescript
-FunctionSerializer(declaration)
+new FunctionSerializer(declaration)
 ```
 | Parameter | Type | Optional |
 | ----------- | ----------- | ----------- |
@@ -17,7 +17,7 @@ FunctionSerializer(declaration)
 
 ## Properties
 ### public declaration: any
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/AbstractSerializer.ts#L4)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/serializers/AbstractSerializer.ts#L4)
 
 ## Methods
 ### public parseParameter(decl): DocumentedParameter
@@ -26,6 +26,6 @@ FunctionSerializer(declaration)
 | decl | TypeParameterReflection | ❌ |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/FunctionSerializer.ts#L51)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/serializers/FunctionSerializer.ts#L51)
 ### public serialize(): DocumentedClassMethod
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/FunctionSerializer.ts#L9)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/serializers/FunctionSerializer.ts#L9)

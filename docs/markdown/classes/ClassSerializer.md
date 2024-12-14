@@ -8,7 +8,7 @@ description: No description provided
 
 
 ```typescript
-ClassSerializer(declaration)
+new ClassSerializer(declaration)
 ```
 | Parameter | Type | Optional |
 | ----------- | ----------- | ----------- |
@@ -17,7 +17,7 @@ ClassSerializer(declaration)
 
 ## Properties
 ### public declaration: any
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/AbstractSerializer.ts#L4)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/serializers/AbstractSerializer.ts#L4)
 
 ## Methods
 ### public parseMethod(decl): DocumentedClassMethod
@@ -26,20 +26,20 @@ ClassSerializer(declaration)
 | decl | DeclarationReflection | ❌ |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/ClassSerializer.ts#L185)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/serializers/ClassSerializer.ts#L185)
 ### public parseParameter(decl): DocumentedParameter
 | Parameter | Type | Optional |
 | ----------- | ----------- | ----------- |
 | decl | TypeParameterReflection | ❌ |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/ClassSerializer.ts#L226)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/serializers/ClassSerializer.ts#L226)
 ### public parseProperties(decl): DocumentedClassProperty
 | Parameter | Type | Optional |
 | ----------- | ----------- | ----------- |
 | decl | DeclarationReflection | ❌ |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/ClassSerializer.ts#L123)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/serializers/ClassSerializer.ts#L123)
 ### public serialize(): DocumentedClass
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/ClassSerializer.ts#L69)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/serializers/ClassSerializer.ts#L69)

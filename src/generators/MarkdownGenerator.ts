@@ -59,7 +59,7 @@ export class MarkdownGenerator {
         if (!c) return '';
 
         const ctor = codeBlock(
-            `${escape(c.constructor)}(${c.parameters
+            `new ${escape(c.constructor)}(${c.parameters
                 .filter((p) => !p.name.includes('.'))
                 .map((m) => m.name)
                 .join(', ')})`,

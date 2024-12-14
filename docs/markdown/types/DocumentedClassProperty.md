@@ -21,4 +21,4 @@ description: No description provided
 | type | null \| string | N/A |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/serializers/ClassSerializer.ts#L26)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/serializers/ClassSerializer.ts#L26)

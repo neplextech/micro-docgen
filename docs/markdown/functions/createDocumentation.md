@@ -15,4 +15,4 @@ Creates documentation based on the provided options.
 | options | [MicroDocgenInit](/docs/markdown/types/MicroDocgenInit.md) | ❌ | The initialization options for MicroDocgen. |
 
 
-- [Source](https://github.com/neplextech/micro-docgen/blob/38358ca74767eba2bb03bd633518726d6b884070/src/documentation.ts#L111)
+- [Source](https://github.com/neplextech/micro-docgen/blob/371ee6a0b1da9f772b4a8da6879190804ab8453b/src/documentation.ts#L111)
